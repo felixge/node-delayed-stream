@@ -80,8 +80,6 @@ default.
 Returns a new `delayedStream` that will emit an error if the `maxDataSize` is
 exceeded.
 
-Upon creation, the `source.pause()` is called.
-
 ### delayedStream.source
 
 The `source` stream managed by this object. This is useful if you are

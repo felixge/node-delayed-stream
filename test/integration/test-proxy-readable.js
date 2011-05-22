@@ -6,8 +6,6 @@ var Stream = require('stream').Stream;
 
 (function testProxyReadableProperty() {
   var source = new Stream();
-
-  fake.stub(source, 'pause');
   var delayedStream = DelayedStream.create(source);
 
   source.readable = fake.value('source.readable');

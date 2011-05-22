@@ -6,8 +6,6 @@ var Stream = require('stream').Stream;
 
 (function testHandleSourceErrors() {
   var source = new Stream();
-
-  fake.stub(source, 'pause');
   var delayedStream = DelayedStream.create(source);
 
   // We deal with this by attaching a no-op listener to 'error' on the source
