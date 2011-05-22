@@ -63,9 +63,9 @@ object, rather than in two places.
 ### Buffer limits
 
 `DelayedStream` provides a `maxDataSize` property that can be used to limit
-the amount of data being buffered. This feature is enabled by default, in
-order to protect you from bad `source` streams that don't react to
-`source.pause()`.
+the amount of data being buffered. In order to protect you from bad `source`
+streams that don't react to `source.pause()`, this feature is enabled by
+default.
 
 ## API
 
