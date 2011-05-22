@@ -2,7 +2,7 @@
   "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
   "name": "delayed-stream",
   "description": "Buffers events from a stream until you are ready to handle them.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/felixge/node-delayed-stream",
   "repository": {
     "type": "git",
