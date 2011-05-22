@@ -1,7 +1,7 @@
 {
   "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
   "name": "delayed-stream",
-  "description": "TBD",
+  "description": "Buffers events from a stream until you are ready to handle them.",
   "version": "0.0.0",
   "homepage": "https://github.com/felixge/node-delayed-stream",
   "repository": {
@@ -13,5 +13,8 @@
     "node": "*"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "fake": "0.2.0",
+    "far": "0.0.1"
+  }
 }
