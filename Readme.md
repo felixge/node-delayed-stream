@@ -44,9 +44,10 @@ All events of the `source` stream are hijacked by overwriting the `source.emit`
 method. Until node implements a catch-all event listener, this is the only way.
 
 However, `DelayedStream` still continues to emit all events it captures on the
-`source`.
+`source`, regardless of whether you have released the delayed stream yet or
+not.
 
-By default, `DelayedStream` captures all `source` events and stores them in
+Upon creation, `DelayedStream` captures all `source` events and stores them in
 an internal event buffer. Once `DelayedStream#release()` is called, all
 buffered events are emitted on the `DelayedStream`, and the event buffer is
 cleared. After that, `DelayedStream` merely acts as a proxy for the underlaying
