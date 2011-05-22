@@ -44,4 +44,9 @@ var Stream = require('stream').Stream;
   fake.expect(source, 'resume');
   delayedStream.resume();
   fake.verify();
+
+  // Emitting more events directly leads to them being emitted
+  fake.expect(delayedStream, 'emit', ['foo', 3]);
+  source.emit('foo', 3);
+  fake.verify();
 })();
