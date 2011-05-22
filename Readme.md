@@ -57,7 +57,7 @@ source.
 
 Error events on `source` are buffered / proxied just like any other events.
 However, `DelayedStream#create` attaches a no-op `'error'` listener to the
-`source`, this way you only have to handle errors on the `DelayedStream`
+`source`. This way you only have to handle errors on the `DelayedStream`
 object, rather than in two places.
 
 ### Buffer limits
