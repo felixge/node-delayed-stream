@@ -118,7 +118,7 @@ Calls `source.pause()`.
 
 Calls `delayedStream.resume()` and then proxies the arguments to `source.pipe`.
 
-#### delayedStream.release
+### delayedStream.release()
 
 Emits and clears all events that have been buffered up so far. This does not
 resume the underlaying source, use `delayedStream.resume()` instead.
