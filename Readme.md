@@ -122,3 +122,7 @@ Calls `delayedStream.resume()` and then proxies the arguments to `source.pipe`.
 
 Emits and clears all events that have been buffered up so far. This does not
 resume the underlaying source, use `delayedStream.resume()` instead.
+
+## License
+
+delayed-stream is licensed under the MIT license.
