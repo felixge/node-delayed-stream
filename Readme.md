@@ -82,7 +82,7 @@ The `source` stream managed by this object. This is useful if you are
 passing your `delayedStream` around, and you still want to access properties
 on the `source` object.
 
-### delayedStream.maxDataSize = 1024 * 1024;
+### delayedStream.maxDataSize = 1024 * 1024
 
 The amount of data to buffer before emitting an `error`.
 
@@ -95,7 +95,7 @@ characters.
 If you know what you are doing, you can set this property to `Infinity` to
 disable this feature.
 
-### delayedStream.dataSize = 0;
+### delayedStream.dataSize = 0
 
 The amount of data buffered so far.
 
