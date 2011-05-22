@@ -10,7 +10,7 @@
   },
   "main": "./lib/delayed_stream",
   "engines": {
-    "node": ">=0.4.8"
+    "node": ">=0.4.0"
   },
   "dependencies": {},
   "devDependencies": {
