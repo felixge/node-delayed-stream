@@ -2,6 +2,12 @@
 
 Buffers events from a stream until you are ready to handle them.
 
+## Installation
+
+``` bash
+npm install delayed-stream
+```
+
 ## Usage
 
 The following example shows how to write a http echo server that delays its
