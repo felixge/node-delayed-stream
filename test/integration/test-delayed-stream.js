@@ -30,7 +30,8 @@ var Stream = require('stream').Stream;
 
   // After resume, delayedStream must playback all events
   fake
-    .expect(delayedStream, 'emit')
+    .stub(delayedStream, 'emit')
+    .times(Infinity)
     .withArg(1, 'newListener');
   fake.expect(delayedStream, 'emit', ['foo', 1]);
   fake.expect(delayedStream, 'emit', ['foo', 2]);
