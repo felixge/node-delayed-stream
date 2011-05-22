@@ -43,26 +43,26 @@ know about the implementation.
 All events of the `source` stream are hijacked by overwriting the `source.emit`
 method. Until node implements a catch-all event listener, this is the only way.
 
-However, `DelayedStream` still continues to emit all events it captures on the
+However, delayed-stream still continues to emit all events it captures on the
 `source`, regardless of whether you have released the delayed stream yet or
 not.
 
-Upon creation, `DelayedStream` captures all `source` events and stores them in
+Upon creation, delayed-stream captures all `source` events and stores them in
 an internal event buffer. Once `delayedStream.release()` is called, all
-buffered events are emitted on the `DelayedStream`, and the event buffer is
-cleared. After that, `DelayedStream` merely acts as a proxy for the underlaying
+buffered events are emitted on the `delayedStream`, and the event buffer is
+cleared. After that, delayed-stream merely acts as a proxy for the underlaying
 source.
 
 ### Error handling
 
 Error events on `source` are buffered / proxied just like any other events.
 However, `delayedStream.create` attaches a no-op `'error'` listener to the
-`source`. This way you only have to handle errors on the `DelayedStream`
+`source`. This way you only have to handle errors on the `delayedStream`
 object, rather than in two places.
 
 ### Buffer limits
 
-`DelayedStream` provides a `maxDataSize` property that can be used to limit
+delayed-stream provides a `maxDataSize` property that can be used to limit
 the amount of data being buffered. In order to protect you from bad `source`
 streams that don't react to `source.pause()`, this feature is enabled by
 default.
@@ -71,7 +71,7 @@ default.
 
 ### DelayedStream.create(source, [maxDataSize])
 
-Creates a new `DelayedStream` that will emit an error if the `maxDataSize` is
+Returns a new `delayedStream` that will emit an error if the `maxDataSize` is
 exceeded.
 
 Upon creation, the `source.pause()` is called.
@@ -79,7 +79,7 @@ Upon creation, the `source.pause()` is called.
 ### delayedStream.source
 
 The `source` stream managed by this object. This is useful if you are
-passing your `DelayedStream` around, and you still want to access properties
+passing your `delayedStream` around, and you still want to access properties
 on the `source` object.
 
 ### delayedStream.maxDataSize = 1024 * 1024;
@@ -105,7 +105,7 @@ An ECMA5 getter that returns the value of `source.readable`.
 
 ### delayedStream.resume()
 
-If the DelayedStream has not been released so far, `delayedStream.release()`
+If the `delayedStream` has not been released so far, `delayedStream.release()`
 is called.
 
 In either case, `source.resume()` is called.
