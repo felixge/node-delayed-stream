@@ -48,7 +48,7 @@ However, `DelayedStream` still continues to emit all events it captures on the
 not.
 
 Upon creation, `DelayedStream` captures all `source` events and stores them in
-an internal event buffer. Once `DelayedStream#release()` is called, all
+an internal event buffer. Once `delayedStream.release()` is called, all
 buffered events are emitted on the `DelayedStream`, and the event buffer is
 cleared. After that, `DelayedStream` merely acts as a proxy for the underlaying
 source.
@@ -56,7 +56,7 @@ source.
 ### Error handling
 
 Error events on `source` are buffered / proxied just like any other events.
-However, `DelayedStream#create` attaches a no-op `'error'` listener to the
+However, `delayedStream.create` attaches a no-op `'error'` listener to the
 `source`. This way you only have to handle errors on the `DelayedStream`
 object, rather than in two places.
 
@@ -76,13 +76,13 @@ exceeded.
 
 Upon creation, the `source.pause()` is called.
 
-### DelayedStream#source
+### delayedStream.source
 
 The `source` stream managed by this object. This is useful if you are
 passing your `DelayedStream` around, and you still want to access properties
 on the `source` object.
 
-### DelayedStream#maxDataSize = 1024 * 1024;
+### delayedStream.maxDataSize = 1024 * 1024;
 
 The amount of data to buffer before emitting an `error`.
 
@@ -95,30 +95,30 @@ characters.
 If you know what you are doing, you can set this property to `Infinity` to
 disable this feature.
 
-### DelayedStream#dataSize = 0;
+### delayedStream.dataSize = 0;
 
 The amount of data buffered so far.
 
-### DelayedStream#readable
+### delayedStream.readable
 
 An ECMA5 getter that returns the value of `source.readable`.
 
-### DelayedStream#resume()
+### delayedStream.resume()
 
-If the DelayedStream has not been released so far, `DelayedStream#release()`
+If the DelayedStream has not been released so far, `delayedStream.release()`
 is called.
 
 In either case, `source.resume()` is called.
 
-### DelayedStream#pause()
+### delayedStream.pause()
 
 Calls `source.pause()`.
 
-### DelayedStream#pipe(dest)
+### delayedStream.pipe(dest)
 
-Calls `DelayedStream#resume()` and then proxies the arguments to `source.pipe`.
+Calls `delayedStream.resume()` and then proxies the arguments to `source.pipe`.
 
-#### DelayedStream#release
+#### delayedStream.release
 
 Emits and clears all events that have been buffered up so far. This does not
-resume the underlaying source, use `DelayedStream#resume()` instead.
+resume the underlaying source, use `delayedStream.resume()` instead.
