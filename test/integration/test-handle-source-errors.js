@@ -6,7 +6,7 @@ var Stream = require('stream').Stream;
 
 (function testHandleSourceErrors() {
   var source = new Stream();
-  var delayedStream = DelayedStream.create(source);
+  var delayedStream = DelayedStream.create(source, {pauseStream: false});
 
   // We deal with this by attaching a no-op listener to 'error' on the source
   // when creating a new DelayedStream. This way error events on the source

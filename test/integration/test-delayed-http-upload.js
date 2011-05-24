@@ -6,7 +6,7 @@ var http = require('http');
 var UPLOAD = new Buffer(10 * 1024 * 1024);
 
 var server = http.createServer(function(req, res) {
-  var delayed = DelayedStream.create(req, UPLOAD.length);
+  var delayed = DelayedStream.create(req, {maxDataSize: UPLOAD.length});
 
   setTimeout(function() {
     res.writeHead(200);

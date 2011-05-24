@@ -75,16 +75,38 @@ default.
 
 ## API
 
-### DelayedStream.create(source, [maxDataSize])
+### DelayedStream.create(source, [options])
 
-Returns a new `delayedStream` that will emit an error if the `maxDataSize` is
-exceeded.
+Returns a new `delayedStream`. Available options are:
+
+* `pauseStream`
+* `maxDataSize`
+
+The description for those properties can be found below.
 
 ### delayedStream.source
 
 The `source` stream managed by this object. This is useful if you are
 passing your `delayedStream` around, and you still want to access properties
 on the `source` object.
+
+### delayedStream.pauseStream = true
+
+Whether to pause the underlaying `source` when calling
+`DelayedStream.create()`. Modifying this property afterwards has no effect.
+
+### delayedStream.maxDataSize = 1024 * 1024
+
+The amount of data to buffer before emitting an `error`.
+
+If the underlaying source is emitting `Buffer` objects, the `maxDataSize`
+refers to bytes.
+
+If the underlaying source is emitting JavaScript strings, the size refers to
+characters.
+
+If you know what you are doing, you can set this property to `Infinity` to
+disable this feature. You can also modify this property during runtime.
 
 ### delayedStream.maxDataSize = 1024 * 1024
 

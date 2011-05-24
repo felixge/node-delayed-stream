@@ -6,7 +6,7 @@ var Stream = require('stream').Stream;
 
 (function testPipeReleases() {
   var source = new Stream();
-  var delayedStream = DelayedStream.create(source);
+  var delayedStream = DelayedStream.create(source, {pauseStream: false});
 
   fake.expect(delayedStream, 'resume');
   delayedStream.pipe(new Stream());

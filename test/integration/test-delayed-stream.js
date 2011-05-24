@@ -6,7 +6,7 @@ var Stream = require('stream').Stream;
 
 (function testDelayEventsUntilResume() {
   var source = new Stream();
-  var delayedStream = DelayedStream.create(source);
+  var delayedStream = DelayedStream.create(source, {pauseStream: false});
 
   // delayedStream must not emit until we resume
   fake.expect(delayedStream, 'emit', 0);
