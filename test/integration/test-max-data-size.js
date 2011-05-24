@@ -6,7 +6,7 @@ var Stream = require('stream').Stream;
 
 (function testMaxDataSize() {
   var source = new Stream();
-  var delayedStream = DelayedStream.create(source, {maxDataSize: 1024});
+  var delayedStream = DelayedStream.create(source, {maxDataSize: 1024, pauseStream: false});
 
   source.emit('data', new Buffer(1024));
 
