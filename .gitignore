@@ -1,2 +1,5 @@
 *.un~
 /node_modules/*
+
+# Vim swap files
+.*.sw[a-z]
