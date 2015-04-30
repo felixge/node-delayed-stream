@@ -6,7 +6,7 @@
   "name": "delayed-stream",
   "description": "Buffers events from a stream until you are ready to handle them.",
   "license": "MIT",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "homepage": "https://github.com/felixge/node-delayed-stream",
   "repository": {
     "type": "git",
